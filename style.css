@@ -1,0 +1,230 @@
+:root{
+    --color1: rgb(26, 18, 11);
+    --color2: rgb(60, 42, 33);
+    --color3: rgb(213, 206, 163);
+    --color4: rgb(236, 236, 218);
+    --color5: rgb(250, 250, 245);
+
+    --font-title: 'Merienda';
+    --font-normal: 'Schibsted Grotesk', sans-serif;
+
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    width: 100%;
+    height: auto;
+    font-family: var(--font-normal);
+    color: var(--color1);
+    background: linear-gradient(
+    40deg, var(--color3), var(--color4), var(--color5)
+    );
+}
+nav{
+    width: 90%;
+    height: 10vh;
+    margin: 0 auto;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 5%;
+}
+nav button{
+    text-transform: uppercase;
+}
+nav a{
+    color: var(--color1);
+}
+.nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+}
+nav ul{
+    display: flex;
+}
+nav ul li{
+    padding: 10px 15px;
+    font-weight: 500;
+}
+#logo{
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: 30px;
+    cursor:default;
+}
+.account > *{
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 17px;
+}
+.account button{
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    background-color: var(--color2);
+    color: var(--color4);
+    padding: 10px 20px;
+}
+/* ---------- HEADER --------------- */
+header{
+    position: relative;
+    height: 90vh;
+    width: 90%;
+    margin: 0 auto;
+}
+.hero{
+    width: 100%;
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+}
+.hero-left{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+.hero-right{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+.hero img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hero-left h1{
+    padding: 10px;
+    margin: 10px 10px 2px 10px;
+    font-size: 3.6em;
+}
+.hero-left p{
+    padding: 10px;
+    margin: 0 10px 20px 10px;
+    font-size: 1em;
+    word-spacing: 2px;
+}
+.hero-left a{
+    padding: 10px 15px;
+    border: 1px solid var(--color1);
+    color: var(--color1);
+    margin: 10px 10px 10px 20px;
+    border-radius: 3px;
+    background-color: var(--color3);
+    transition: all 500ms ease-in-out;
+    box-shadow: 0 2px 5px var(--color1);
+}
+.hero-left a:hover{
+    color: var(--color4);
+    background-color: var(--color1);
+}
+@media (max-width:1010px) {
+    .hero-left h1{
+        font-size: 3em;
+    }
+    .hero-left p{
+        font-size: .8em;
+    }
+}
+@media (max-width: 800px) {
+    .hero{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+    }
+    .hero-right{
+        grid-column: 2 / 4;
+        grid-row: span;
+        z-index: 0;
+
+    }
+    .hero-left{
+        grid-column: 1 / 3;
+        z-index: 1;
+
+    }
+    .hero-left h1{
+        font-size: 2rem; ;
+    }
+}
+@media (max-width: 740px) {
+    .nav-container{
+        height: 20vh;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .hero{
+        height: 80vh;
+    }
+    nav a{
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        padding: 2px;
+        margin-top: 50px;
+    }
+    nav .nav-menu{
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+        padding: 2px;
+        justify-content: space-between;
+    }
+    nav .account{
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        margin-top: 50px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    nav .account> *{
+        margin: 0 5px;
+        padding: 5px;
+        font-size: .8rem;
+    }
+    .hero-left{
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+        text-align: center;
+    }
+    .hero-right{
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+    }
+    .hero-left h1{
+        font-size: 2.5rem;
+    }
+    .hero-left p{
+        font-size: 1rem;
+    }
+}
+@media (max-width: 380px) {
+    nav .account button{
+        font-size: .5rem;
+        padding: 5px 10px;
+    }
+    .hero-left p{
+        background-color: hsl(var(--color4));
+    }
+    nav ul{
+        margin-left: 0;
+        justify-content:space-between;
+        align-items: center;
+        font-size: .7rem;
+    }
+}
